@@ -1,0 +1,43 @@
+<script src="../../../../ionic/src/providers/establishment/establishment.provider.ts"></script>
+
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Mural dos sonhos
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <ion-checkbox></ion-checkbox>
+    <ion-label>Todos</ion-label>
+    <ion-checkbox></ion-checkbox>
+    <ion-label>Ativos</ion-label>
+    <ion-checkbox></ion-checkbox>
+    <ion-label>Concluídos</ion-label>
+
+    <!--<ion-grid>-->
+    <!--<ion-row *ngFor="let dream of dreams">-->
+    <!--<ion-col>{{dream.name}}</ion-col>-->
+    <!--</ion-row>-->
+    <!--</ion-grid>-->
+
+    <ion-grid class="mural">
+        <ion-row>
+            <ion-col [size]="12" [sizeXl]="6" *ngFor="let category of categories">
+                <ion-row>
+                    <ion-col>
+                        <ion-text>
+                            <h3>{{category.name}}</h3>
+                        </ion-text>
+                    </ion-col>
+                </ion-row>
+
+                <app-dream [category]="category.key"></app-dream>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
